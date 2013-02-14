@@ -1,0 +1,94 @@
+<!DOCTYPE HTML>
+<html xmlns="http://www.w3.org/1999/xhtml">
+	<head>
+		<title>Quiz Application</title>
+		<link href='./css/quizapp.css' rel="stylesheet"/>
+		<script src="./scripts/jquery-1.8.3.min.js"></script>
+		<script src="./scripts/underscore.js"></script>
+		<script src='./scripts/backbone.js'></script>
+		<script src="./scripts/quizapp.js" type="text/javascript"></script>
+	</head>
+	<body>
+		<div id='index_view' class="template_view">
+			<div id='application_logo'>
+				<img src="./images/quiz-logo_A.png" border="0" alt="Quiz Application"/>
+			</div>
+			<div id='session_info' align="center">
+				<ul>
+					<li>
+						<label for="user_name">Enter your name</label>
+					</li>
+					<li>
+						<input type='text' class="text_content" required="true" name="user_name" id="user_name" autofocus="true"/>
+					</li>
+					<li>
+						<button type='button' accesskey="S" class='start'>
+							Start Quiz
+						</button>
+					</li>
+					<li>
+						<button type='button' accesskey="S" class='help'>
+							Help
+						</button>
+					</li>
+				</ul>
+			</div>
+		</div>
+		<div id='quiz_view' class='template_view'>
+			<div id='header'>
+				<div class='question_idx'></div>
+				<div class='timer'>
+					<img src='images/timer_start.png' id='timer_image' alt="Time left" width="50" height="50"/>
+					<br/>
+					<span class='time-left'></span>
+				</div>
+				<div class='weightage'></div>
+			</div>
+			<div id='question_info' align="center">
+				<div class="question"></div>
+				<ul class="option_list"></ul>
+			</div>
+			<div id='footer'>
+				<div class='quit'>
+					<a href='#home'><img src='./images/arrow_left.png' border="0" align='absmiddle'>&#160;Quit</a>
+				</div>
+				<div class='next'>
+					<button type='button' class='next_question'>
+						Next
+					</button>
+					<button type='button' class='finish_quiz'>
+						Finish
+					</button>
+				</div>
+				<div class='pass'>
+					<a href='#'>Pass&#160;<img src='./images/arrow_right.png' border="0" align='absmiddle'></a>
+				</div>
+			</div>
+		</div>
+		<div id='results_view' class="template_view">
+			<div id='application_logo'>
+				<img src="./images/quiz-logo_A.png" border="0" alt="Quiz Application"/>
+				<div class='app_sub_title'>
+					Results
+				</div>
+			</div>
+			<div id='result_info' align="center">
+				<div class='result_summary'>
+					<div class='wish_text'></div>
+					<div class='total_score'></div>
+				</div>
+				<div class="question_score"></div>
+				<br/>
+				<button type='button' accesskey="S" class="restart">
+					Play Again
+				</button>
+				<button type='button' accesskey="S" class="newgame">
+					New Game
+				</button>
+			</div>
+		</div>
+		<script>
+			QuizApplication.createJSONPRequest();
+		</script>
+	</body>
+</html>
